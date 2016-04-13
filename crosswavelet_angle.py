@@ -1,8 +1,6 @@
 
-import time
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 #input: 
 #   CWT: Crosswavelet transform of two signals 
