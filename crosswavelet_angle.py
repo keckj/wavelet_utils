@@ -14,17 +14,17 @@ import matplotlib.pyplot as plt
 #      *Vector of size (N)
 #   MCSD: Mean circular standard deviation for each time
 #      *Vector of size (N)
-def crosswavelet_angle(XWT, deg=True):
+def crosswavelet_angle(CWT, deg=True):
     
     #check inputs
-    assert (XWT.ndim == 2), 'Provided XWT is not a matrix!'
+    assert (CWT.ndim == 2), 'Provided CWT is not a matrix!'
     
     #precompute sizes
-    P = XWT.shape[0] #number of scales
-    N = XWT.shape[1] #number of times
+    P = CWT.shape[0] #number of scales
+    N = CWT.shape[1] #number of times
     
     # compute phase shift matrix (in radians)
-    A = np.angle(XWT, deg=False)
+    A = np.angle(CWT, deg=False)
 
     # compute the circular mean angle over all scales
     X = np.sum(np.cos(A), axis=0)
