@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 #       -P is the number of scales
 #       -N is the number of times
 #   deg: (optional) default=True
-#        Outputs MCA and MSD in degree if True, else in radian
+#        Outputs MCA and MCSD in degree if True, else in radian
 #output: 
 #   MCA:  Mean circular angle for each time
 #      *Vector of size (N)
@@ -32,7 +32,7 @@ def crosswavelet_angle(CWT, deg=True):
     MCA = np.arctan2(Y,X)
 
 
-    # compute circular standard deviation 
+    # compute mean circular standard deviation 
     R = np.sqrt(X*X + Y*Y)
     MCSD = np.sqrt(-2.0*np.minimum(np.log(R/P),0.0))
     
