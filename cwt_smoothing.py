@@ -29,10 +29,10 @@ def cwt_smooth(CWT, window_size, F_filter=np.mean):
     SCWT = np.zeros(CWT.shape, dtype=CWT.dtype)
     for i in xrange(P):
         imin = max(0, i-H//2)
-        imax = min(P, i+H//2)
+        imax = min(P-1, i+H//2)
         for j in xrange(N):
             jmin = max(0, j-W//2)
-            jmax = min(N, j+W//2)
+            jmax = min(N-1, j+W//2)
             
             SCWT[i,j] = F_filter(CWT[imin:imax+1,jmin:jmax+1])
 
