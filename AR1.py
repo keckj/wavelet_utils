@@ -33,7 +33,7 @@ def gen_AR1(alpha,N,M=1,m=0.0,sigma_e=1.0):
     m       = format_input(m)
     alpha   = format_input(alpha)
     sigma_e = format_input(sigma_e)
-    M = np.max([alpha.size, m.size, sigma_e.size])
+    M = np.max([M,alpha.size, m.size, sigma_e.size])
 
     assert m.ndim == 1 and alpha.ndim ==1 and sigma_e.ndim==1
     assert (alpha>=0.0).all() and (alpha<=1.0).all()
