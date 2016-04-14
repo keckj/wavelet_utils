@@ -40,7 +40,7 @@ def gen_AR1(alpha,N,M=1,m=0.0,sigma_e=1.0):
     assert (sigma_e>=0.0).all()
     
     shape = (M,N)
-    En = np.random.randn(*shape)*sigma_e
+    En = np.random.randn(*shape)*sigma_e[:,None]
     AR1 = np.zeros(shape, dtype=float)
 
     AR1[:,0] = m[:] + En[:,0]
